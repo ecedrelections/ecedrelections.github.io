@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EC-EDR Help Guide</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            padding: 30px;
+        }
+
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            max-width: 450px;
+            margin: auto;
+            margin-top: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .container:hover {
+            transform: scale(1.02);
+        }
+
+        .title {
+            font-weight: bold;
+            color: #D215D2;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .dropdown {
+            cursor: pointer;
+            color: #6a1b9a;
+            display: block;
+            margin: 10px 0;
+            text-align: left;
+            font-weight: bold;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .dropdown:hover {
+            color: #D215D2;
+        }
+
+        .content {
+            display: none;
+            padding-left: 15px;
+            font-size: 12px;
+            color: #6f7174;
+            margin-top: 10px;
+            text-align: left;
+
+        
+        }
+
+        button {
+            background-color: #6a1b9a;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #D215D2;
+        }
+
+        .pdf-container {
+            margin-top: 20px;
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        .footer {
+            color: #6f7174;
+            text-align: center;
+            font-size: 11px;
+            margin-top: 20px;
+        }
+
+        video {
+            width: 100%;
+            max-width: 640px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h3 class="title">EC-EDR <br>උපකාරක මාර්ගෝපදේශය</h3>
+
+        <div>
+            <video controls>
+                <source src="resource/guidevideo.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="dropdown" onclick="toggleDropdown('complain1')">
+            1. නව පැමිණිල්ලක් එකතු කරන්නේ කෙසේද?
+        </div>
+        <div id="complain1" class="content">
+            <ul>
+                <li>ඔබගේ ගිණුමට ලොග් වන්න</li>
+                <li>මුල් තිරයේ,<strong>පැමිණිල්ලක් එක් කරන්න හෝ ඉල්ලීමක් කරන්න</strong>ටැබය මත තට්ටු කරන්න.</li>
+                <li>Navigate to the <strong>Complaints</strong> section</li>
+                <li>Get photos/videos or you can skip.</li>
+                <li>Fill in the complaint details (e.g., title, description).</li>
+                <li>Submit the form. You will receive a reference number for tracking.</li>
+            </ul>
+        </div>
+
+        <div class="dropdown" onclick="toggleDropdown('complain2')">
+            2. How to Add a New Request
+        </div>
+        <div id="complain2" class="content">
+            <ul>
+                <li>Log in to your account.</li>
+                <li>On the home screen, tap on <strong>Add Complaint or Request</strong> tab.</li>
+                <li>Navigate to the <strong>Requests</strong> section.</li>
+                <li>Fill in the request details (e.g., title, description).</li>
+                <li>If you want, you can attach a file, but it's not compulsory.</li>
+                <li>Submit the form. You will receive a reference number for tracking.</li>
+            </ul>
+        </div>
+
+        <div class="dropdown" onclick="toggleDropdown('complain3')">
+            3. Review the Latest Complaint or Request
+        </div>
+        <div id="complain3" class="content">
+            <ul>
+                <li>Log in to your account.</li>
+                <li>Go to the home screen, tap on <strong>Latest Complaint/Request</strong> section.</li>
+                <li>Click the <strong>Details</strong> button.</li>
+                <li>View the status and details of the complaint.</li>
+            </ul>
+        </div>
+
+        <div class="dropdown" onclick="toggleDropdown('complain4')">
+            4. Complaint and Request History View
+        </div>
+        <div id="complain4" class="content">
+            <ul>
+                <li>Log in to your account.</li>
+                <li>Navigate to the <strong>History</strong> section.</li>
+                <li>View a list of all your past complaints and requests.</li>
+                <li>Tap on any entry to see detailed information and status.</li>
+            </ul>
+        </div>
+        
+        <div class="dropdown" onclick="toggleDropdown('complain5')">
+            5. How to Change Language and Logout
+        </div>
+        <div id="complain5" class="content">
+            <ul>
+                <li>Go to the <strong>Settings</strong> menu.</li>
+                <li>Select <strong>Language</strong> to change the app’s language.</li>
+                <li>To log out, go to the Settings menu and tap on <strong>Logout</strong>.</li>
+            </ul>
+        </div>
+
+        <button onclick="previewPDF()">Learn All About It</button>
+
+        <div class="pdf-container" id="pdfContainer">
+            <iframe src="resource/Election Disputes Resolution App Userguide.pdf" width="100%" height="300px"></iframe>
+        </div>
+
+        <p class="footer">Thank you for using the Election Commission of Sri Lanka App!<br> For any questions, feel free to contact our support team.</p>
+    </div>
+
+    <script>
+        function toggleDropdown(id) {
+            var content = document.getElementById(id);
+            content.style.display = content.style.display === "block" ? "none" : "block";
+        }
+
+        function previewPDF() {
+            var pdfContainer = document.getElementById("pdfContainer");
+            if (pdfContainer.style.display === "block") {
+                pdfContainer.style.display = "none";  // Hide the PDF container
+            } else {
+                pdfContainer.style.display = "block";  // Show the PDF container
+            }
+        }
+    </script>
+
+</body>
+</html>
